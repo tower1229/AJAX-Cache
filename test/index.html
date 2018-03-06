@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+    <title>Ajax-Cache Demo</title>
+    <meta content="Ajax-Cache" name="Keywords">
+    <meta content="Ajax-Cache Demo" name="Description">
+    <meta name="format-detection" content="telephone=no">
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <script src="../ajax-cache.js"></script>
+</head>
+
+<body>
+    
+    <div style="width:1000px;margin:auto;">
+        <button id="test1" type="button">send ajax with snapshoot</button>
+        <button id="test2" type="button">send ajax with localCache</button>
+        <button id="test3" type="button">clear cache</button>
+        <div id="log" style="border:1px dashed #ccc;padding: 1em;margin:1em 0;font-family: 'Consolas','Microsoft YaHei UI','Microsoft YaHei',Arial,Helvetica,sans-serif;"></div>
+    </div>
+    
+    <script>
+        var $log = document.getElementById('log');
+        $('#test1').on('click', function() {
+            $.ajax({
+                url: "http://rapapi.org/mockjsdata/9195/common/getRandom",
+                data: {
+                    test:1
+                },
+                dataType:'json',
+                localCache: 'snapshoot',
+                success: function(res) {
+                    if (res.snapshoot) {
+                        $log.innerText = ('[snapshoot] ' + res.data);
+                    } else {
+                        setTimeout(function() {
+                            $log.innerText = $log.innerText + ('\n[remote data] ' + res.data);
+                        }, 0);
+                    }
+                }
+            });
+        });
+        $('#test2').on('click', function() {
+            $.ajax({
+                url: "http://rapapi.org/mockjsdata/9195/common/getRandom",
+                dataType:'json',
+                localCache: 5000,
+                success: function(res) {
+                    if (res.data) {
+                        $log.innerText = $log.innerText + ('\n[Caching for 5 seconds] ' + res.data);
+                    }
+                }
+            });
+        });
+        $('#test3').on('click', function() {
+            $.ajaxCache.clear();
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,23 @@
+{
+  "name": "ajax-cache",
+  "version": "1.0.0",
+  "description": "The solution to the ajax-cache",
+  "main": "jquery-plugin.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tower1229/AJAX-Cache.git"
+  },
+  "keywords": [
+    "ajax",
+    "cache"
+  ],
+  "author": "tower1229@gmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tower1229/AJAX-Cache/issues"
+  },
+  "homepage": "https://github.com/tower1229/AJAX-Cache#readme"
+}
