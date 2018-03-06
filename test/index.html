@@ -17,7 +17,7 @@
 <body>
     
     <div style="width:1000px;margin:auto;">
-        <button id="test1" type="button">send ajax with snapshoot</button>
+        <button id="test1" type="button">send ajax with snapshot</button>
         <button id="test2" type="button">send ajax with localCache</button>
         <button id="test3" type="button">clear cache</button>
         <div id="log" style="border:1px dashed #ccc;padding: 1em;margin:1em 0;font-family: 'Consolas','Microsoft YaHei UI','Microsoft YaHei',Arial,Helvetica,sans-serif;"></div>
@@ -32,10 +32,10 @@
                     test:1
                 },
                 dataType:'json',
-                localCache: 'snapshoot',
+                localCache: 'snapshot',
                 success: function(res) {
-                    if (res.snapshoot) {
-                        $log.innerText = ('[snapshoot] ' + res.data);
+                    if (res.snapshot) {
+                        $log.innerText = ('[snapshot] ' + res.data);
                     } else {
                         setTimeout(function() {
                             $log.innerText = $log.innerText + ('\n[remote data] ' + res.data);

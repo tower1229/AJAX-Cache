@@ -1,28 +1,28 @@
-English | [中文](README_CN.md)
+中文 | [English](README.md)
 
 # AJAX-Cache
 
 [![npm](https://img.shields.io/npm/v/@tower1229/AJAX-Cache.svg)](https://www.npmjs.com/package/@tower1229/AJAX-Cache) [![GitHub release](https://img.shields.io/github/release/tower1229/AJAX-Cache.svg)]() [![license](https://img.shields.io/github/license/tower1229/AJAX-Cache.svg)]()
 
-> :tophat:The best jQuery-ajax-cache plugin
+> :tophat:最好用的jQuery-Ajax缓存插件
 
-## Introduction
+## 介绍
 
-AJAX-Cache is a jQuery plug-in. It implements asynchronous request caching based on localStorage/sessionStorage, and provides two cache modes: snapshot and timer.
+AJAX-Cache是一款jQuery插件，基于localStorage/sessionStorage实现异步请求缓存功能，并提供“快照”和“定时”两种缓存模式。
 
-## Install
+## 安装
 
 ### npm
 
-`npm i ajax-cache  --save`
+`npm i @tower1229/flow-ui`
 
 ### Download
 
 https://github.com/tower1229/AJAX-Cache
 
-## Usage
+## 使用
 
-Open the snapshot cache
+开启快照缓存
 
 ```
 $.ajax({
@@ -39,7 +39,7 @@ $.ajax({
 });
 ```
 
-Open the timing caching
+开启定时缓存
 
 ```
 $.ajax({
@@ -51,7 +51,7 @@ $.ajax({
     }
 });
 
-Scavenging caching
+清除缓存
 
 ```
 $.ajax({
@@ -65,22 +65,22 @@ $.ajax({
 });
 ```
 
-Scavenging all caches
+清除所有缓存
 
 ```
 $.ajaxCache.clear();
 ```
 
-Configuration
+配置
 
 ```
 $.ajaxCache.set({
-	storage: 'localStorage', 		//Storage mode, default "localStorage", optional "sessionStorage"
-	cacheNamePrefix: '_ajaxcache'	//Storage prefix, usually without modification
+	storage: 'localStorage', 		//存储方式，默认"localStorage"，可选择"sessionStorage"
+	cacheNamePrefix: '_ajaxcache'	//存储前缀，通常不需要修改
 });
 ```
 
-## License
+## 许可证
 
 [MIT](http://opensource.org/licenses/MIT)
 

@@ -74,7 +74,7 @@
 				//请求队列
 				if (ajaxLocalCacheQueue[cacheKey]) {
 					ajaxLocalCacheQueue[cacheKey].push(setting.success);
-					if (setting.localCache !== 'snapshoot') {
+					if (setting.localCache !== 'snapshot') {
 						xhr.ignoreError = true;
 						return xhr.abort();
 					}
@@ -101,7 +101,7 @@
 				if (cacheVal && setting.dataType === 'json') {
 					cacheVal = $.parseJSON(cacheVal);
 				}
-				if (setting.localCache && (setting.localCache === 'snapshoot' || !isNaN(setting.localCache))) {
+				if (setting.localCache && (setting.localCache === 'snapshot' || !isNaN(setting.localCache))) {
 					var nowDate = new Date().getTime();
 					if (cacheDeadline && (cacheDeadline > nowDate)) {
 						//console.log('使用缓存 '+cacheDeadline+'>'+nowDate);
@@ -113,23 +113,23 @@
 							storage.removeItem(cacheName);
 						}
 						//使用快照
-						if (cacheDeadline === 'snapshoot') {
-							var snapshootData = cacheVal;
+						if (cacheDeadline === 'snapshot') {
+							var snapshotData = cacheVal;
 							if ($.isPlainObject(cacheVal)) {
-								snapshootData = $.extend(true, {}, cacheVal, {
-									snapshoot: true
+								snapshotData = $.extend(true, {}, cacheVal, {
+									snapshot: true
 								});
 							}
-							setting.success(snapshootData);
+							setting.success(snapshotData);
 						}
 						//console.log('建立缓存');
 						ajaxLocalCacheQueue[cacheKey] = [setting.success];
 						setting.success = function(res) {
 							//数据校验
-							if (setting.localCache === 'snapshoot' && isEqual(res, cacheVal)) {
+							if (setting.localCache === 'snapshot' && isEqual(res, cacheVal)) {
 								return console.log('快照缓存命中');
 							}
-							var newDeadline = setting.localCache === 'snapshoot' ? 'snapshoot' : (new Date().getTime() + setting.localCache),
+							var newDeadline = setting.localCache === 'snapshot' ? 'snapshot' : (new Date().getTime() + setting.localCache),
 								newCacheName = [conf.cacheNamePrefix, cacheKey, newDeadline].join(cacheNameSep);
 							$.each(ajaxLocalCacheQueue[cacheKey], function(i, cb) {
 								typeof cb === 'function' && cb(res);
