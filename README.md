@@ -2,7 +2,7 @@ English | [中文](README_CN.md)
 
 # AJAX-Cache
 
-[![npm](https://img.shields.io/npm/v/@tower1229/AJAX-Cache.svg)](https://www.npmjs.com/package/@tower1229/AJAX-Cache) [![GitHub release](https://img.shields.io/github/release/tower1229/AJAX-Cache.svg)]() [![license](https://img.shields.io/github/license/tower1229/AJAX-Cache.svg)]()
+[![npm](https://img.shields.io/npm/v/ajax-cache.svg)](https://www.npmjs.com/package/@tower1229/AJAX-Cache) [![GitHub release](https://img.shields.io/github/release/tower1229/AJAX-Cache.svg)]() [![license](https://img.shields.io/github/license/tower1229/AJAX-Cache.svg)]()
 
 > :tophat:The best jQuery-ajax-cache plugin
 
@@ -80,6 +80,10 @@ $.ajaxCache.set({
 	cacheNamePrefix: '_ajaxcache'	//Storage prefix, usually without modification
 });
 ```
+
+## Live Example
+
+http://refined-x.com/AJAX-Cache/test/
 
 ## License
 

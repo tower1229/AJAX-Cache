@@ -2,7 +2,7 @@
 
 # AJAX-Cache
 
-[![npm](https://img.shields.io/npm/v/@tower1229/AJAX-Cache.svg)](https://www.npmjs.com/package/@tower1229/AJAX-Cache) [![GitHub release](https://img.shields.io/github/release/tower1229/AJAX-Cache.svg)]() [![license](https://img.shields.io/github/license/tower1229/AJAX-Cache.svg)]()
+[![npm](https://img.shields.io/npm/v/ajax-cache.svg)](https://www.npmjs.com/package/@tower1229/AJAX-Cache) [![GitHub release](https://img.shields.io/github/release/tower1229/AJAX-Cache.svg)]() [![license](https://img.shields.io/github/license/tower1229/AJAX-Cache.svg)]()
 
 > :tophat:最好用的jQuery-Ajax缓存插件
 
@@ -80,6 +80,10 @@ $.ajaxCache.set({
 	cacheNamePrefix: '_ajaxcache'	//存储前缀，通常不需要修改
 });
 ```
+
+## 演示
+
+http://refined-x.com/AJAX-Cache/test/
 
 ## 许可证
 
