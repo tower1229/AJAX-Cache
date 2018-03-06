@@ -22,7 +22,7 @@ https://github.com/tower1229/AJAX-Cache
 
 ## Usage
 
-Open the snapshot cache
+### Open the snapshot cache
 
 ```
 $.ajax({
@@ -39,7 +39,7 @@ $.ajax({
 });
 ```
 
-Open the timing caching
+### Open the timing caching
 
 ```
 $.ajax({
@@ -52,7 +52,7 @@ $.ajax({
 });
 ```
 
-Scavenging caching
+### Scavenging caching
 
 ```
 $.ajax({
@@ -66,13 +66,13 @@ $.ajax({
 });
 ```
 
-Scavenging all caches
+### Scavenging all caches
 
 ```
 $.ajaxCache.clear();
 ```
 
-Configuration
+### Configuration
 
 ```
 $.ajaxCache.set({
