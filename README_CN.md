@@ -50,6 +50,7 @@ $.ajax({
         console.log('\n[Caching for 5 seconds] ' + res.data);
     }
 });
+```
 
 清除缓存
 
