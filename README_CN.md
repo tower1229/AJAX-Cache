@@ -22,6 +22,8 @@ https://github.com/tower1229/AJAX-Cache
 
 ## 使用
 
+你只需要为jQuery.ajax()增加一个`localCache`配置
+
 ### 开启快照缓存
 
 ```

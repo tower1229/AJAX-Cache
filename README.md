@@ -22,6 +22,8 @@ https://github.com/tower1229/AJAX-Cache
 
 ## Usage
 
+You only need to add a `localCache` configuration for jQuery.ajax ()
+
 ### Open the snapshot cache
 
 ```
