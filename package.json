@@ -1,6 +1,6 @@
 {
   "name": "ajax-cache",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "The best jQuery-ajax-cache plugin",
   "main": "ajax-cache.js",
   "scripts": {
@@ -12,12 +12,13 @@
   },
   "keywords": [
     "ajax",
-    "cache"
+    "cache",
+    "jquery-plugin"
   ],
   "author": "tower1229@gmail.com",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/tower1229/AJAX-Cache/issues"
   },
-  "homepage": "https://github.com/tower1229/AJAX-Cache#readme"
+  "homepage": "http://refined-x.com/AJAX-Cache/"
 }
