@@ -14,7 +14,7 @@ AJAX-Cache是一款jQuery插件，基于localStorage/sessionStorage实现异步�
 
 ### npm
 
-`npm i @tower1229/flow-ui`
+`npm i ajax-cache  --save`
 
 ### Download
 
@@ -92,13 +92,3 @@ http://refined-x.com/AJAX-Cache/test/
 [MIT](http://opensource.org/licenses/MIT)
 
 Copyright (c) 2017-present, [refined-x.com](http://refined-x.com)
-
-<script type="text/javascript">
-var _hmt = _hmt || [];
-(function() {
-  var hm = document.createElement("script");
-  hm.src = "//hm.baidu.com/hm.js?f10103677155b485824f29def715eb5d";
-  var s = document.getElementsByTagName("script")[0];
-  s.parentNode.insertBefore(hm, s);
-})();
-</script>
