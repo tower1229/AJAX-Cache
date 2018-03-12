@@ -27,7 +27,7 @@
         var $log = document.getElementById('log');
         $('#test1').on('click', function() {
             $.ajax({
-                url: "http://rapapi.org/mockjsdata/9195/common/getRandom",
+                url: "http://rap2api.taobao.org/app/mock/3567/GET/return/timestamp",
                 data: {
                     test:1
                 },
@@ -46,7 +46,7 @@
         });
         $('#test2').on('click', function() {
             $.ajax({
-                url: "http://rapapi.org/mockjsdata/9195/common/getRandom",
+                url: "http://rap2api.taobao.org/app/mock/3567/GET/return/timestamp",
                 dataType:'json',
                 localCache: 5000,
                 success: function(res) {
