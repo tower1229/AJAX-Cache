@@ -34,6 +34,8 @@ $.ajax({
     success: function(res) {
         if (res.snapshot) {
             console.log('[snapshot] ' + res.data);
+        } else if (res.snapshootEqual) {
+            console.log('remote data is equal snapshot');
         } else {
             console.log('[remote data] ' + res.data);
         }
