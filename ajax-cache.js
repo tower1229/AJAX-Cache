@@ -1,8 +1,8 @@
 /*
  * name: ajax-cache.js
- * version: v0.0.2
- * update: 快照相同时为数据扩种snapshotEqual=true
- * date: 2018-07-04
+ * version: v0.0.3
+ * update: 请求失败清除队列
+ * date: 2018-11-05
  */
 (function($) {
 
