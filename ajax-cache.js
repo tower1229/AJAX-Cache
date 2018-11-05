@@ -147,6 +147,11 @@
 							newDeadline = null;
 							newCacheName = null;
 						};
+						var errorHandle = setting.error || function(){};
+						setting.error = function(jqXHR, textStatus, errorThrown){
+							delete ajaxLocalCacheQueue[cacheKey];
+							errorHandle(jqXHR, textStatus, errorThrown)
+						}
 					}
 					nowDate = null;
 				} else if (cacheName) {
