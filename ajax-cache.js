@@ -1,8 +1,8 @@
 /*
  * name: ajax-cache.js
- * version: v0.0.3
- * update: 请求失败清除队列
- * date: 2018-11-05
+ * version: v0.0.4
+ * update: 修复请求成功队列
+ * date: 2019-01-17
  */
 (function($) {
 
@@ -60,7 +60,7 @@
 				var storage = window[conf.storage],
 					cacheKey,
 					cacheNameSep = ['|', '^', '@', '+', '$'],
-					cacheNamePrefix = '_ajaxcache',
+					cacheNamePrefix = conf.cacheNamePrefix,
 					cacheName,
 					cacheDeadline,
 					cacheVal;
@@ -93,7 +93,7 @@
 				}
 				//查找缓存
 				$.each(storage, function(key, val) {
-					if (key.indexOf([conf.cacheNamePrefix, cacheKey].join(cacheNameSep) + cacheNameSep) === 0) {
+					if (key.indexOf([cacheNamePrefix, cacheKey].join(cacheNameSep) + cacheNameSep) === 0) {
 						cacheName = key;
 						cacheDeadline = key.split(cacheNameSep)[2];
 						cacheVal = val;
@@ -125,14 +125,17 @@
 							setting.success(snapshotData);
 						}
 						//console.log('建立缓存');
-						ajaxLocalCacheQueue[cacheKey] = [setting.success];
+                        if (typeof(ajaxLocalCacheQueue[cacheKey]) === "undefined") {
+                            ajaxLocalCacheQueue[cacheKey] = [];
+                        }
+                        ajaxLocalCacheQueue[cacheKey].push(setting.success);
 						setting.success = function(res) {
 							//数据校验
 							if (setting.localCache === 'snapshot' && isEqual(res, cacheVal)) {
 								res.snapshotEqual = true;
 							}
 							var newDeadline = setting.localCache === 'snapshot' ? 'snapshot' : (new Date().getTime() + setting.localCache),
-								newCacheName = [conf.cacheNamePrefix, cacheKey, newDeadline].join(cacheNameSep);
+								newCacheName = [cacheNamePrefix, cacheKey, newDeadline].join(cacheNameSep);
 							$.each(ajaxLocalCacheQueue[cacheKey], function(i, cb) {
 								typeof cb === 'function' && cb(res);
 							});
